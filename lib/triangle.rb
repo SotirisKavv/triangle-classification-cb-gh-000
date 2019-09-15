@@ -34,8 +34,5 @@ class Triangle
 
   class TriangleError < StandardError
 
-    def msg
-      "The Triangle with these side lenghts isn't valid!"
-    end
   end
 end
