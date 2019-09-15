@@ -4,7 +4,7 @@ class Triangle
 
   def initialize(a, b, c)
     if condition
-      
+
     else
       @a = a
       @b = b
@@ -21,7 +21,7 @@ class Triangle
       true
     end
   end
-  
+
   def kind
     if @a == @b && @a == @c
       :equilateral
@@ -33,6 +33,6 @@ class Triangle
   end
 
   class TriangleError < StandardError
-    
+
   end
 end
