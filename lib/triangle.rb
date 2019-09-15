@@ -3,12 +3,7 @@ class Triangle
   attr_accessor :a, :b, :c
 
   def initialize(a, b, c)
-    if !valid?(a, b, c)
-      begin
-        raise TriangleError
-      rescue TriangleError => error
-        puts error.msg
-      end
+    
     else
       @a = a
       @b = b
@@ -27,12 +22,20 @@ class Triangle
   end
 
   def kind
-    if @a == @b && @a == @c
-      :equilateral
-    elsif (@a == @b && @a != @c) || (@a == @c && @a != @b) || (@c == @b && @a != @c)
-      :isosceles
+    if !valid?(a, b, c)
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+        puts error.msg
+      end
     else
-      :scalene
+      if @a == @b && @a == @c
+        :equilateral
+      elsif (@a == @b && @a != @c) || (@a == @c && @a != @b) || (@c == @b && @a != @c)
+        :isosceles
+      else
+        :scalene
+      end
     end
   end
 
