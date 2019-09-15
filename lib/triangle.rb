@@ -20,11 +20,7 @@ class Triangle
 
   def kind
     if !valid?(a, b, c)
-      begin
-        raise TriangleError
-      rescue TriangleError => error
-        puts error.msg
-      end
+      raise TriangleError
     else
       if @a == @b && @a == @c
         :equilateral
