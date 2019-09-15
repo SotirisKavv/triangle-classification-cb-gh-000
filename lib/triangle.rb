@@ -3,8 +3,12 @@ class Triangle
   attr_accessor :a, :b, :c
 
   def initialize(a, b, c)
-    if condition
-
+    if valid?(a, b, c)
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+        puts error.msg
+      end
     else
       @a = a
       @b = b
@@ -34,5 +38,8 @@ class Triangle
 
   class TriangleError < StandardError
 
+    def msg
+      "The Triangle with these side lenghts isn't valid!"
+    end
   end
 end
