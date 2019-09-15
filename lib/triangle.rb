@@ -3,12 +3,9 @@ class Triangle
   attr_accessor :a, :b, :c
 
   def initialize(a, b, c)
-
-    else
-      @a = a
-      @b = b
-      @c = c
-    end
+    @a = a
+    @b = b
+    @c = c
   end
 
   def valid?(a, b, c)
