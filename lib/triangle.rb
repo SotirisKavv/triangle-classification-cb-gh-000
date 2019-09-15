@@ -11,7 +11,7 @@ class Triangle
   def valid?(a, b, c)
     if a <= 0 || b <= 0 || c <= 0
       false
-    elsif a + b < c || a + c < b || b + c < a
+    elsif a + b <= c || a + c <= b || b + c <= a
       false
     else
       true
